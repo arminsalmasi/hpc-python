@@ -1,0 +1,17 @@
+import numpy
+import time
+st = time.process_time()
+arr = numpy.arange(100000)
+dif = numpy.zeros(99999, int)
+for i in range(1, len(arr)):
+    dif[i-1] = arr[i] - arr[i-1]
+en = time.process_time()
+print(en-st)
+
+
+
+st2 = time.process_time()
+arr = numpy.arange(100000)
+dif = arr[1:] - arr[:-1]
+en2 = time.process_time()
+print(en2-st2)
